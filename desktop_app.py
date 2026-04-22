@@ -35,6 +35,7 @@ class AfbeeldingenNaarJpgApp:
         container.pack(fill="both", expand=True)
         container.columnconfigure(0, weight=1)
         container.rowconfigure(4, weight=1)
+        container.rowconfigure(5, weight=0)
 
         ttk.Label(
             container,
@@ -81,6 +82,13 @@ class AfbeeldingenNaarJpgApp:
         scrollbar = ttk.Scrollbar(list_frame, orient="vertical", command=self.tree.yview)
         scrollbar.grid(row=0, column=1, sticky="ns")
         self.tree.configure(yscrollcommand=scrollbar.set)
+
+        footer = ttk.Label(
+            container,
+            text="Afbeeldingen Naar JPG | JvO ICT 2026",
+            foreground="#666666",
+        )
+        footer.grid(row=5, column=0, sticky="e", pady=(12, 0))
 
     def _choose_folder(self) -> None:
         selected = filedialog.askdirectory(title="Kies een map met afbeeldingen")
