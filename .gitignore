@@ -1,6 +1,9 @@
 .venv/
+.venv-build/
 .tmp/
 __pycache__/
 *.pyc
-release/.build/
-AfbeeldingenNaarJPG.spec
+build/
+dist/
+release/
+*.spec
